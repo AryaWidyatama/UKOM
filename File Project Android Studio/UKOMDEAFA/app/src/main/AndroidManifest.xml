@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.komputerkit.ukomde_afa">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/iconde"
+        android:label="DE-AFA"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/iconde"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.UKOMDEAFA">
+        <activity android:name=".DetailHapusBarang"></activity>
+        <activity android:name=".DetailUbahBarang" />
+        <activity android:name=".DaftarBaruDataProduk" />
+        <activity android:name=".KurangData" />
+        <activity android:name=".RecycleView" />
+        <activity android:name=".TambahData" />
+        <activity android:name=".PenjualActivity" />
+        <activity android:name=".QrCode" />
+        <activity android:name=".ClickedItem" />
+        <activity android:name=".DetailMain" />
+        <activity
+            android:name=".InfoActivity"
+            android:noHistory="false" />
+        <activity
+            android:name=".PemesananActivity"
+            android:noHistory="false" />
+        <activity
+            android:name=".HomeUtamaActivity"
+            android:noHistory="false" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity
+            android:name=".HomeActivity"
+            android:label="Home"
+            android:noHistory="true" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
