@@ -2,6 +2,7 @@ package com.komputerkit.ukomde_afa;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,52 +14,66 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
+import java.util.List;
+
 public class  KurangDataAdapter extends RecyclerView.Adapter<KurangDataAdapter.ViewHolder>{
-    DataPenjual[] DataPenjual;
+    List<dataMenu> mKontakList;
     Context context;
-    public KurangDataAdapter(DataPenjual[] DataPenjual,KurangData activity) {
-        this.DataPenjual = DataPenjual;
-        this.context = activity;
+    public KurangDataAdapter(List<dataMenu> MenuList) {
+        this.mKontakList = MenuList;
+
     }
 
-    @NonNull
+
 
     @Override
-    public KurangDataAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.data_item,parent,false);
-        ViewHolder viewHolder = new KurangDataAdapter.ViewHolder(view);
+    public KurangDataAdapter.ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
+     View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.data_item, parent,false);
+     ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull KurangDataAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull KurangDataAdapter.ViewHolder holder,final int position) {
 
-        final DataPenjual myDatalist = DataPenjual[position];
-        holder.tvHargabrg.setText(myDatalist.getHargaBarang());
-        holder.tvjudulrcv.setText(myDatalist.getJudulBarang());
-        holder.tvdescrcv.setText(myDatalist.getDescBarang());
-        holder.imgviewrcv.setImageResource(myDatalist.getGambarBarang());
-        holder.tvkodebrg.setText(myDatalist.getKodeBarang());
+        holder.tvHargabrg.setText("Harga :  Rp." + mKontakList.get(position).getHarga());
+        holder.tvjudulrcv.setText( mKontakList.get(position).getMenu());
+        holder.tvdescrcv.setText( mKontakList.get(position).getDeskripsi());
+        holder.tvkodebrg.setText( "Kode : " +mKontakList.get(position).getKode());
+        Glide.with(holder.itemView.getContext())
+                .load("" + mKontakList.get(position).getGambar())
+                .into(holder.imgviewrcv);
+//        holder.tvdescrcv.setText("Desc" + mKontakList.get(position).getTelp());
+//        holder.tvdescrcv.setText(myDatalist.getDescBarang());
+//        holder.imgviewrcv.setImageResource(mKontakList.get(position).getGambar());
+//        holder.tvkodebrg.setText(myDatalist.getKodeBarang());
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context,DetailHapusBarang.class);
-                intent.putExtra("gambarbarang",myDatalist.getGambarBarang());
-                intent.putExtra("judulbarang",myDatalist.getJudulBarang());
-                intent.putExtra("Deskripsi barang",myDatalist.getDescBarang());
-                intent.putExtra("ubahkodebarang",myDatalist.getKodeBarang());
-                intent.putExtra("hargabrg",myDatalist.getHargaBarang());
+                Intent intent = new Intent(view.getContext(),DetailHapusBarang.class);
+                intent.putExtra("desc",mKontakList.get(position).getDeskripsi());
+                intent.putExtra("Nama",mKontakList.get(position).getMenu());
+                intent.putExtra("Alamat",mKontakList.get(position).getHarga());
+                intent.putExtra("gambarbarang",mKontakList.get(position).getGambar());
+                intent.putExtra("kode",mKontakList.get(position).getKode());
+                intent.putExtra("idmenu",mKontakList.get(position).getIdmenu());
 
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
+              //  intent.putExtra("gambarbarang",myDatalist.getGambarBarang());
+//                intent.putExtra("Judul",mKontakList.get(position).getKategori());
+////                intent.putExtra("Judul",myDatalist.getDescBarang());
+////                intent.putExtra("ubahkodebarang",myDatalist.getKodeBarang());
+//                intent.putExtra("Harga",mKontakList.get(position).getKeterangan());
+
+                    view.getContext().startActivity(intent);
             }
         });
     }
 
     @Override
     public int getItemCount() {
-        return DataPenjual.length;
+        return mKontakList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder  {

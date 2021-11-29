@@ -51,16 +51,21 @@
 
                 <TextView
                     android:id="@+id/tvKodebrg"
+                    android:fontFamily="@font/noto"
+                    android:text="tes"
+                    android:textColor="#121111"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="tes"
                     android:layout_margin="10dp"/>
 
                 <TextView
                     android:id="@+id/tvHargabrg"
+                    android:fontFamily="@font/tcm"
+                    android:text="tes"
+                    android:textSize="16sp"
+                    android:textColor="#121111"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="tes"
                     android:layout_margin="10dp"/>
             </LinearLayout>
 

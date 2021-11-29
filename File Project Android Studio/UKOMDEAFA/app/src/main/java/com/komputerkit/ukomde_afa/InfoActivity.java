@@ -18,12 +18,15 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class InfoActivity extends AppCompatActivity {
     private ImageButton imageButton;
     private Button buttonout,btnpjl;
+    TextView user,telp;
     Dialog dialog;
 
     @Override
@@ -32,6 +35,15 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
         getSupportActionBar().hide();
+        user = findViewById(R.id.username_info);
+        telp = findViewById(R.id.telp_info);
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null){
+            String value = getIntent().getStringExtra("user");
+            String value1 = getIntent().getStringExtra("telp");
+            user.setText(value);
+            telp.setText(value1);
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
             NotificationChannel channel = new NotificationChannel("My Notification", "My Notification", NotificationManager.IMPORTANCE_DEFAULT);
@@ -69,6 +81,10 @@ public class InfoActivity extends AppCompatActivity {
                     case R.id.home1:
                         startActivity(new Intent(getApplicationContext()
                                 ,HomeUtamaActivity.class));
+//                        Intent intent1 = new Intent(InfoActivity.this,HomeUtamaActivity.class);
+//                        intent1.putExtra("userH",bundle);
+//                        startActivity(intent1);
+
                         overridePendingTransition(0,0);
 
                         return true;

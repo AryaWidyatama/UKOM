@@ -1,11 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/bgpage"
-    tools:context=".DaftarBaruDataProduk">
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bgpage"
+        tools:context=".DaftarBaruDataProduk">
+
+    <EditText
+        android:id="@+id/EmailUbah"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/kolom1"
+        android:fontFamily="@font/noto"
+        android:gravity="center"
+        android:hint="Masukkan Harga Barang"
+        android:padding="5dp"
+        android:textColor="#050505"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HaaargaUbah" />
+
+    <EditText
+        android:id="@+id/HaaargaUbah"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/kolom1"
+        android:fontFamily="@font/noto"
+        android:gravity="center"
+        android:hint="Masukkan Kode Barang"
+        android:padding="5dp"
+        android:textColor="#050505"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MenuUbah" />
+
+    <EditText
+        android:id="@+id/MenuUbah"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/kolom1"
+        android:fontFamily="@font/noto"
+        android:gravity="center"
+        android:hint="Masukkan Judul Barang"
+        android:padding="5dp"
+        android:textColor="#050505"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/KodeUbah" />
 
     <ImageButton
         android:id="@+id/imageButton"
@@ -22,10 +78,10 @@
         app:srcCompat="@drawable/webp_net_resizeimage__4_" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/GAAMABARuBAH"
         android:layout_width="200dp"
         android:layout_height="130dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,64 +89,62 @@
         app:srcCompat="@drawable/b13" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Judul"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
-
-    <EditText
-        android:id="@+id/tvJudulDetailrcv"
+        android:id="@+id/idKaaategoriUbah"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/kolom1"
         android:fontFamily="@font/noto"
         android:gravity="center"
-        android:text="TextView"
+        android:hint="Masukkan ID Kategori "
         android:textColor="#050505"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
 
     <EditText
-        android:id="@+id/tvDescUbahDetail"
+        android:id="@+id/KodeUbah"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/kolom1"
         android:fontFamily="@font/noto"
         android:gravity="center"
+        android:hint="Masukkan Deskripsi Barang Anda"
         android:padding="5dp"
-        android:text="TextView"
         android:textColor="#050505"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvJudulDetailrcv" />
+        app:layout_constraintTop_toBottomOf="@+id/idKaaategoriUbah" />
 
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/DsripsiUbah"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="Unggah Gambar"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/kolom1"
+        android:fontFamily="@font/noto"
+        android:gravity="center"
+        android:hint="Masukkan Email Anda"
+        android:padding="5dp"
+        android:textColor="#050505"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/EmailUbah" />
 
     <Button
         android:id="@+id/btnout5"
         android:layout_width="150dp"
         android:layout_height="40dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/rounded5"
         android:fontFamily="@font/noto"
         android:text="Unggah Barang"
@@ -98,7 +152,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDescUbahDetail" />
+        app:layout_constraintTop_toBottomOf="@+id/KodeUbah"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView24"
@@ -111,12 +166,12 @@
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/ubahGaambar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -124,4 +179,19 @@
         app:layout_constraintStart_toEndOf="@+id/textView24"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_flip_camera_ios_24" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="46dp"
+        android:fontFamily="@font/tcm"
+        android:text="ID Kategori Yang tersedia : 1-25"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GAAMABARuBAH" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

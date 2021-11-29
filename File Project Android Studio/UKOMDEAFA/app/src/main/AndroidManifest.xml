@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.komputerkit.ukomde_afa">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/iconde"
@@ -10,7 +16,8 @@
         android:roundIcon="@mipmap/iconde"
         android:supportsRtl="true"
         android:theme="@style/Theme.UKOMDEAFA">
-        <activity android:name=".DetailHapusBarang"></activity>
+        <activity android:name=".ForgetPassword"></activity>
+        <activity android:name=".DetailHapusBarang" />
         <activity android:name=".DetailUbahBarang" />
         <activity android:name=".DaftarBaruDataProduk" />
         <activity android:name=".KurangData" />
@@ -28,7 +35,8 @@
             android:noHistory="false" />
         <activity
             android:name=".HomeUtamaActivity"
-            android:noHistory="false" />
+            android:alwaysRetainTaskState="true"
+            android:exported="true" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity

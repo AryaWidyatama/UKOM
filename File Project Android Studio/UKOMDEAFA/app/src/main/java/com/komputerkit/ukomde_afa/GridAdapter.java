@@ -5,11 +5,21 @@ import android.content.IntentFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GridAdapter extends BaseAdapter {
+
+    public List<dataMenu> dataMenuList;
 
     Context context;
     String[] flowerName;
@@ -21,18 +31,20 @@ public class GridAdapter extends BaseAdapter {
 
 
 
-    public GridAdapter(Context context, String[] flowerName, int[] flowerImage) {
+    public GridAdapter(Context context, List<dataMenu> dataMenuList) {
         this.context = context;
-        this.flowerName = flowerName;
-        this.flowerImage = flowerImage;
+//        this.flowerName = flowerName;
+//        this.flowerImage = flowerImage;
+        this.dataMenuList = dataMenuList;
+        inflater = LayoutInflater.from(context);
 
-        this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//       this.inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
     }
 
     @Override
     public int getCount() {
-        return flowerName.length;
+        return dataMenuList.size();
     }
 
     @Override
@@ -48,21 +60,47 @@ public class GridAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        if (inflater == null)
-            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//        Toast.makeText(context, ""+context, Toast.LENGTH_SHORT).show();
 
-        if (convertView == null){
-            convertView = inflater.inflate(R.layout.grid_item, null);
+
+//        if (inflater == null){
+//            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+//    }
+            View view;
+        if(convertView == null) {
+            convertView = LayoutInflater.from(context).inflate(R.layout.grid_item,null);
+
         }
+//            View view=LayoutInflater.from(context).inflate(R.layout.grid_item,null);
+
+
+
+
+
+//
+//
+//            convertView = inflater.inflate(R.layout.grid_item, null);
+
+//        View view = LayoutInflater.from(context).inflate(R.layout.grid_item,null);
+
 
         ImageView imageView = convertView.findViewById(R.id.gridimage);
         TextView textView = convertView.findViewById(R.id.item_name);
+        TextView textView1 = convertView.findViewById(R.id.tvHargaGrid);
 
 
-        imageView.setImageResource(flowerImage[position]);
-        textView.setText(flowerName[position]);
+        textView.setText(dataMenuList.get(position).getMenu());
+        textView1.setText(dataMenuList.get(position).getHarga());
+//        imageView.setImageResource(flowerImage[position]);
+//        textView.setText(flowerName[position]);
+
+        Glide.with(context)
+                .load("" + dataMenuList.get(position).getGambar())
+                .apply(new RequestOptions().override(350, 550))
+                .into(imageView);
 
 
         return convertView;
     }
 }
+

@@ -11,8 +11,11 @@ public class PenjualActivity extends AppCompatActivity {
 
     Button btntambah,btnhapus,btnubah,btnkeluar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+         PenjualActivity ma;
+         ma=this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_penjual);
         getSupportActionBar().hide();

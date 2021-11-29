@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="20dp"
-    android:gravity="center">
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="110dp"
+        app:cardBackgroundColor="#CB83470B"
+        android:layout_width="190dp"
         android:layout_height="match_parent"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="5dp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,44 +23,82 @@
 
         <ImageView
             android:id="@+id/gridimage"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:scaleType="centerCrop" />
+            android:layout_width="180dp"
+            android:layout_marginTop="-26dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/b10" />
 
         <TextView
             android:id="@+id/textView11"
-            android:layout_width="110dp"
+            android:layout_width="180dp"
+            android:layout_gravity="center"
             android:layout_height="25dp"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="45dp"
             android:background="@drawable/rounded3"
             android:gravity="center"
             android:text="Detail"
             android:textColor="@color/white" />
 
+        <TextView
+            android:id="@+id/item_name"
+            android:layout_width="180dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:fontFamily="@font/tenali"
+            android:lineSpacingMultiplier="0.5"
+            android:text="rose"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_marginTop="265dp"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:paddingLeft="-15dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/noto"
+            android:gravity="center"
+            android:text="Rp."
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/tvHargaGrid"
+
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:paddingRight="10dp"
+            android:layout_marginTop="265dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/noto"
+            android:gravity="right"
+            android:text="TextView"
+            android:textColor="@color/white"
+            android:textSize="13sp" />
+
     </androidx.cardview.widget.CardView>
 
 
+    <!--    <Button-->
+    <!--        android:id="@+id/btnItem"-->
+    <!--        android:layout_width="90dp"-->
+    <!--        android:layout_height="25dp"-->
+    <!--        android:layout_marginTop="-20dp"-->
+    <!--        android:background="@drawable/rounded3"-->
+    <!--        android:text="Button"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="12dp" />-->
 
-<!--    <Button-->
-<!--        android:id="@+id/btnItem"-->
-<!--        android:layout_width="90dp"-->
-<!--        android:layout_height="25dp"-->
-<!--        android:layout_marginTop="-20dp"-->
-<!--        android:background="@drawable/rounded3"-->
-<!--        android:text="Button"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:textSize="12dp" />-->
 
-
-    <TextView
-        android:id="@+id/item_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/tenali"
-        android:text="rose"
-        android:textColor="#090808"
-        android:textSize="20sp" />
 
 
 

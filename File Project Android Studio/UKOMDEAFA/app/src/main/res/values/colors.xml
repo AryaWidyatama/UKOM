@@ -16,4 +16,6 @@
     <color name="kolom">#C4C4C4</color>
     <color name="merah">#FF0000</color>
     <color name="cream">#F6F6F6</color>
+    <color name="wa">#3E7C17</color>
+    <color name="bgdesc">#CF9A4D</color>
 </resources>
